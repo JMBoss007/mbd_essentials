@@ -16,10 +16,6 @@ import '@/global.css';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
-
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -45,7 +41,9 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        {/* TEMPORARY: minimal placeholder route, see app/age-gate.tsx */}
+        <Stack.Screen name="age-gate" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
         <Stack.Screen name="design-system" options={{ title: 'Design System' }} />
       </Stack>

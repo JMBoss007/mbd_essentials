@@ -193,9 +193,6 @@ tokens exclusively (no inline hex/magic numbers).
 - Reuse the primitives above instead of re-implementing buttons, cards,
   inputs, etc. inline in feature/route code.
 - Gradients are for hierarchy, not decoration — most surfaces stay flat.
-- Keep the stock Expo Router starter screens (`app/(tabs)/*`) untouched
-  beyond the temporary `/design-system` navigation link, until real app
-  screens replace them.
 
 ## Preview Route
 
@@ -203,6 +200,8 @@ tokens exclusively (no inline hex/magic numbers).
 scrolling, mobile-sized component gallery for on-device verification — colors,
 gradients, typography, buttons, inputs, cards, badges, progress bars, and icon
 buttons. It is a development reference only, not one of the five planned main
-tabs (Home, Plan, Coach, Progress, Profile). It is reachable from the stock
-starter Home tab via a temporary "View Design System" link that will be
-removed once real app navigation exists.
+tabs (Home, Plan, Coach, Progress, Profile). The stock starter Home/Explore
+tabs that previously linked to it were removed when the Welcome screen became
+the app entry point (see [app/index.tsx](../app/index.tsx)); the route itself
+remains registered and reachable via direct navigation for development, but is
+not linked from any production screen.
