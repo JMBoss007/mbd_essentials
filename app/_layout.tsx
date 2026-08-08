@@ -44,9 +44,10 @@ export default function RootLayout() {
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="age-gate" options={{ headerShown: false }} />
         <Stack.Screen name="auth-intro" options={{ headerShown: false }} />
-        {/* TEMPORARY: minimal placeholder routes, see app/sign-up.tsx and app/sign-in.tsx */}
         <Stack.Screen name="sign-up" options={{ headerShown: false }} />
+        {/* TEMPORARY: minimal placeholder routes, see app/sign-in.tsx and app/verify-email.tsx */}
         <Stack.Screen name="sign-in" options={{ headerShown: false }} />
+        <Stack.Screen name="verify-email" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
         <Stack.Screen name="design-system" options={{ title: 'Design System' }} />
       </Stack>

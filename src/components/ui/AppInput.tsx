@@ -5,7 +5,9 @@ import {
   View,
   StyleSheet,
   type KeyboardTypeOptions,
+  type ReturnKeyTypeOptions,
   type StyleProp,
+  type TextInputProps,
   type ViewStyle,
 } from 'react-native';
 
@@ -28,6 +30,12 @@ export interface AppInputProps {
   secureTextEntry?: boolean;
   keyboardType?: KeyboardTypeOptions;
   autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
+  autoCorrect?: boolean;
+  autoComplete?: TextInputProps['autoComplete'];
+  textContentType?: TextInputProps['textContentType'];
+  returnKeyType?: ReturnKeyTypeOptions;
+  onSubmitEditing?: () => void;
+  onBlur?: () => void;
   editable?: boolean;
   accessibilityLabel?: string;
   containerStyle?: StyleProp<ViewStyle>;
@@ -46,6 +54,12 @@ export function AppInput({
   secureTextEntry,
   keyboardType,
   autoCapitalize = 'sentences',
+  autoCorrect,
+  autoComplete,
+  textContentType,
+  returnKeyType,
+  onSubmitEditing,
+  onBlur,
   editable = true,
   accessibilityLabel,
   containerStyle,
@@ -75,9 +89,17 @@ export function AppInput({
           secureTextEntry={secureTextEntry}
           keyboardType={keyboardType}
           autoCapitalize={autoCapitalize}
+          autoCorrect={autoCorrect}
+          autoComplete={autoComplete}
+          textContentType={textContentType}
+          returnKeyType={returnKeyType}
+          onSubmitEditing={onSubmitEditing}
           editable={editable}
           onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
+          onBlur={() => {
+            setFocused(false);
+            onBlur?.();
+          }}
           accessibilityLabel={accessibilityLabel ?? label}
           style={styles.input}
         />
