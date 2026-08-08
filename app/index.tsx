@@ -2,23 +2,18 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
-import { Alert, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { AppText, Button, Screen } from '@/src/components/ui';
 import { colors, glow, gradients, radius, spacing } from '@/src/theme';
 
 export default function WelcomeScreen() {
   const handleGetStarted = () => {
-    // TEMPORARY: the real age-gate screen doesn't exist yet — this just
-    // validates navigation. Replace with the real destination once the
-    // age-gate task is built.
     router.push('/age-gate');
   };
 
   const handleSignIn = () => {
-    // TEMPORARY: no authentication exists yet. Replace with real sign-in
-    // navigation once the authentication task is implemented.
-    Alert.alert('Coming Soon', 'Sign in will be available once authentication is implemented.');
+    router.push('/sign-in');
   };
 
   return (
