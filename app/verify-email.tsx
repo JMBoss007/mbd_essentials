@@ -196,6 +196,21 @@ export default function VerifyEmailScreen() {
           accessibilityLabel="Back to email"
         />
       </View>
+
+      {__DEV__ && (
+        <View style={styles.devSection}>
+          <AppText variant="caption" color="muted" style={styles.devLabel}>
+            DEV ONLY — does not verify or create an account
+          </AppText>
+          <Button
+            title="Preview Account Created UI"
+            variant="ghost"
+            fullWidth
+            onPress={() => router.push('/account-created')}
+            accessibilityLabel="Preview Account Created UI (development only)"
+          />
+        </View>
+      )}
     </Screen>
   );
 }
@@ -278,6 +293,17 @@ const styles = StyleSheet.create({
     marginTop: 'auto',
     gap: spacing[12],
     paddingTop: spacing[24],
+  },
+  devSection: {
+    marginTop: spacing[24],
+    paddingTop: spacing[16],
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: colors.neutral.border,
+    gap: spacing[8],
+  },
+  devLabel: {
+    textAlign: 'center',
+    letterSpacing: 1,
   },
   fallbackContent: {
     flexGrow: 1,

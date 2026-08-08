@@ -48,6 +48,9 @@ export default function RootLayout() {
         {/* TEMPORARY: minimal placeholder routes, see app/sign-in.tsx and app/verify-email.tsx */}
         <Stack.Screen name="sign-in" options={{ headerShown: false }} />
         <Stack.Screen name="verify-email" options={{ headerShown: false }} />
+        <Stack.Screen name="account-created" options={{ headerShown: false }} />
+        {/* TEMPORARY: minimal placeholder route, see app/fitness-assessment.tsx */}
+        <Stack.Screen name="fitness-assessment" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
         <Stack.Screen name="design-system" options={{ title: 'Design System' }} />
       </Stack>
